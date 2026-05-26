@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #dcdcdc;
+}
+
+.container{
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+}
+
+.container h1{
+    text-align: center;
+}
+
+input, textarea{
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+}
+button{
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	background-color:black;
+	color:white;
+}
