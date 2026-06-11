@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacts List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Stored Contacts</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+
+    <tbody id="contactTable"></tbody>
+</table>
+
+<script>
+
+fetch('/contacts')
+.then(response => response.json())
+.then(data => {
+
+    let table = document.getElementById('contactTable');
+
+    data.forEach(contact => {
+
+        table.innerHTML += `
+        <tr>
+            <td>${contact.id}</td>
+            <td>${contact.fullName}</td>
+            <td>${contact.email}</td>
+            <td>${contact.message}</td>
+        </tr>
+        `;
+    });
+
+});
+
+</script>
+
+</body>
+</html>
